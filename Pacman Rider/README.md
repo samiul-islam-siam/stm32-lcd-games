@@ -64,7 +64,7 @@ A Pacman-inspired arcade game running on a 16x2 LCD, built with an STM32 Nucleo-
 > PA0 is configured as input with internal pull-down.
 
 > Button reads HIGH when pressed.
-
+<!--
 ### UART Control (Optional)
 
 | STM32 Pin | Function |
@@ -80,7 +80,7 @@ A Pacman-inspired arcade game running on a 16x2 LCD, built with an STM32 Nucleo-
 - Parity: None
 
 > Any key press in a serial terminal acts as the move button.
-
+-->
 ### Potentiometer (Contrast)
 
 | Pot Pin | Connect To |
