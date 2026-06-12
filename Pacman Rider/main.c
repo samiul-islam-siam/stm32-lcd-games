@@ -2,7 +2,7 @@
 /**
   ******************************************************************************
   * @file           : main.c
-  * @brief          : Pacman Rider for STM32
+  * @brief          : Pacman Rider for STM32F446RE (HAL version)
   *
   * LCD 16x2, 4-bit parallel:
   *   RS → PB5,  EN → PB4
@@ -53,7 +53,7 @@
 static Lcd_HandleTypeDef lcd;
 UART_HandleTypeDef huart2;
 
-/* ── Sprite bitmaps ─────────── */
+/* ── Sprite bitmaps (identical to Arduino original) ─────────── */
 static const uint8_t spriteBitmaps[8][8] = {
     {0x07,0x0F,0x1E,0x1C,0x1C,0x1E,0x0F,0x07},  /* 0: pacman open   */
     {0x00,0x0F,0x1F,0x1F,0x1E,0x1F,0x0F,0x00},  /* 1: pacman closed */
@@ -173,7 +173,7 @@ static void loadSprites(void)
 }
 
 /* ════════════════════════════════════════════════════════════════
- * Game logic
+ * Game logic  (direct port of Arduino functions)
  * ════════════════════════════════════════════════════════════════ */
 static void initVars(void)
 {
@@ -374,21 +374,12 @@ static void intro(void)
 {
     Lcd_clear(&lcd);
     Lcd_cursor(&lcd, 0, 3); Lcd_string(&lcd, "WELCOME TO");
-    Lcd_cursor(&lcd, 1, 1); Lcd_string(&lcd, "MICKY'S ARCADE");
-    waitButton();
-
-    Lcd_clear(&lcd);
-    Lcd_cursor(&lcd, 0, 2); Lcd_string(&lcd, "IT'S SIMPLE!");
+    Lcd_cursor(&lcd, 1, 1); Lcd_string(&lcd, "PACMAN RIDER");
     waitButton();
 
     Lcd_clear(&lcd);
     Lcd_cursor(&lcd, 0, 0); Lcd_string(&lcd, "Press the button");
     Lcd_cursor(&lcd, 1, 1); Lcd_string(&lcd, "to move pacman");
-    waitButton();
-
-    Lcd_clear(&lcd);
-    Lcd_cursor(&lcd, 0, 6); Lcd_string(&lcd, "BUT!");
-    Lcd_cursor(&lcd, 1, 0); Lcd_string(&lcd, "Don't forget to");
     waitButton();
 
     Lcd_clear(&lcd);
@@ -438,7 +429,6 @@ static void gameover(void)
     animation(0);
 
     Lcd_cursor(&lcd, 0, 3); Lcd_string(&lcd, "GAME OVER");
-    Lcd_cursor(&lcd, 1, 0); Lcd_string(&lcd, "How did you do?");
     waitButton();
 
     Lcd_clear(&lcd);
