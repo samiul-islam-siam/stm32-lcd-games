@@ -34,6 +34,10 @@ Built with **STM32CubeMX**, **STM32CubeIDE**, and the **STM32 HAL Driver**, thes
 - **Details:** [README](./Space%20Invaders/README.md)
 - **Demo:** TBA
 
+### 🧩 8. Tetris
+- **Details:** [README](./Tetris/README.md)
+- **Demo:** TBA
+
 
 ## 📚 Resources
 
@@ -43,7 +47,7 @@ Check out the STM32 Development Guide: [STM32-Lab](https://github.com/samiul-isl
 
 ### Creating Custom LCD Characters?
 
-Generate HD44780 custom glyphs easily: [NucleoScreen](https://github.com/samiul-islam-siam/nucleoscreen)
+Generate HD44780 custom glyphs easily: [nucleoscreen](https://github.com/samiul-islam-siam/nucleoscreen)
 
 
 
